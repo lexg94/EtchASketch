@@ -4,15 +4,27 @@ const container = document.getElementById("container");
 var rows = 8;
 var cols = 8;
 
+container.innerHTML = "";
+
+
 container.style.setProperty('--grid-rows',rows);
 container.style.setProperty('--grid-cols',cols);
-for (let i = 0; i < rows*cols; i++) {
 
-    let divs = document.createElement("div");
-    container.appendChild(divs).className = "grid-item";
+function makeGrid() {
+
+    for (let i = 0; i < rows*cols; i++) {
+
+        const divs = document.createElement("div");
+        container.appendChild(divs).className = "grid-item";
+    }
 }
+
+makeGrid();
+
+
 const grids = document.querySelectorAll(".grid-item");
 const reset = document.querySelector(".reset-btn");
+
 
 grids.forEach((grid) => {
 
@@ -25,6 +37,7 @@ grids.forEach((grid) => {
         grid.style.backgroundColor = "white";
     });
 });
+
 
 
 
