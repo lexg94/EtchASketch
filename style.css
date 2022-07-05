@@ -2,7 +2,13 @@
     box-sizing: border-box;
 }
 
-#container {
+#full-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#grid-container {
     display:grid;
     grid-template-rows: repeat(var(--grid-rows),1fr);
     grid-template-columns: repeat(var(--grid-cols),1fr);
@@ -29,8 +35,13 @@
     
 }
 
-.grid-item.reset {
-    background-color: white;
+
+.reset-btn {
+    border-radius: 5px;
+    height:50px;
+    width:100px;
+    margin: 30px;
+
 }
 
   
