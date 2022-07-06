@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+html,body {
+    height:100%;
+}
+
+
 #full-container {
     display: flex;
     align-items: center;
@@ -42,6 +47,25 @@
     width:100px;
     margin: 30px;
 
+}
+
+.color-buttons {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    padding-top:15px;
+    
+
+}
+
+.color-buttons .red-btn {
+    background-color: red;
+    font-size:30px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding:10px;
+    border: 5px solid red;
+    cursor:pointer;
 }
 
   

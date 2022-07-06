@@ -1,5 +1,9 @@
 const container = document.getElementById("grid-container");
+const body = document.querySelector("body");
 const input = document.getElementById("val");
+const red_btn = document.querySelector("#red-btn");
+
+let isClicking = false; //mouse events variable
 
 
 input.addEventListener("change", () => {
@@ -17,7 +21,6 @@ input.addEventListener("change", () => {
 
 // make default 8x8 grid
 
-
 function makeGrid() {
 
     container.style.setProperty('--grid-rows',8);
@@ -29,7 +32,8 @@ function makeGrid() {
         container.appendChild(divs).className = "grid-item";
     }
 
-    changeBackground();
+
+    changeBackground(); 
 }
 
 //update grid dimensions based on user input
@@ -49,27 +53,37 @@ function changeGrid() {
 
     changeBackground();
 
+
 }
 
 // change background color of square
 
-function changeBackground() {
+function changeBackground(color="black") {
+
+    red_btn.addEventListener('click', () => {
+        color = "red"
+    });
 
     const grids = document.querySelectorAll(".grid-item");
     const reset = document.querySelector(".reset-btn");
 
     grids.forEach((grid) => {
 
+
         grid.addEventListener('mouseover', function(e) {
 
-            e.target.style.backgroundColor = "red";           
+            e.target.style.backgroundColor = color;
+ 
         });
 
         reset.addEventListener('click', () => {
             grid.style.backgroundColor = "white";
+            color = "black"
         });
     });
+
 }
+
 
 makeGrid();
 
